@@ -1,0 +1,131 @@
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+header {
+  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+header h1 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+}
+
+header p {
+  margin: 0;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.file-upload {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+}
+
+.file-upload label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.file-upload input[type="file"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.file-upload input[type="file"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+.page-go-section {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.page-go-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.page-go-button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.page-go-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}.page-i
+nput-section {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.page-input-section label {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0;
+}
+
+.page-input-section input[type="number"] {
+  width: 80px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.page-input-section input[type="number"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.page-help-text {
+  font-size: 0.8rem;
+  color: #666;
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .page-input-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .page-help-text {
+    margin-top: 0.25rem;
+  }
+}
