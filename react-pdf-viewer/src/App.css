@@ -84,8 +84,35 @@ main {
 .page-go-button:disabled {
   background-color: #6c757d;
   cursor: not-allowed;
-}.page-i
-nput-section {
+}
+
+.sample-pdf-section {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #dee2e6;
+}
+
+.sample-pdf-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.sample-pdf-button:hover {
+  background-color: #218838;
+}
+
+.sample-pdf-button:active {
+  background-color: #1e7e34;
+}
+
+.page-input-section {
   margin-top: 1rem;
   display: flex;
   align-items: center;

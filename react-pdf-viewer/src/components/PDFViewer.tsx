@@ -61,7 +61,7 @@ const PDFViewer = forwardRef<PDFViewerRef, PDFViewerProps>(({ file, onLoadSucces
     }
 
     function goToPage(page: number) {
-        if (page >= 1 && page <= numPages) {
+        if (numPages > 0 && page >= 1 && page <= numPages) {
             setPageNumber(page);
         }
     }
@@ -219,20 +219,24 @@ const PDFViewer = forwardRef<PDFViewerRef, PDFViewerProps>(({ file, onLoadSucces
                     onLoadError={onDocumentLoadError}
                     loading={<div>PDF 로딩 중...</div>}
                 >
-                    <Page
-                        pageNumber={pageNumber}
-                        renderTextLayer={true}
-                        renderAnnotationLayer={true}
-                        onLoadSuccess={onPageLoadSuccess}
-                    />
-                    {searchTerm && (
-                        <HighlightLayer
-                            searchTerm={searchTerm}
-                            textItems={textItems}
-                            currentMatchIndex={currentMatchIndex}
-                            pageMatches={allMatches}
-                            pageNumber={pageNumber}
-                        />
+                    {numPages > 0 && (
+                        <>
+                            <Page
+                                pageNumber={pageNumber}
+                                renderTextLayer={true}
+                                renderAnnotationLayer={true}
+                                onLoadSuccess={onPageLoadSuccess}
+                            />
+                            {searchTerm && (
+                                <HighlightLayer
+                                    searchTerm={searchTerm}
+                                    textItems={textItems}
+                                    currentMatchIndex={currentMatchIndex}
+                                    pageMatches={allMatches}
+                                    pageNumber={pageNumber}
+                                />
+                            )}
+                        </>
                     )}
                 </Document>
             </div>
@@ -254,7 +258,7 @@ const PDFViewer = forwardRef<PDFViewerRef, PDFViewerProps>(({ file, onLoadSucces
                             value={pageNumber}
                             onChange={(e) => {
                                 const page = parseInt(e.target.value);
-                                if (!isNaN(page)) {
+                                if (!isNaN(page) && page >= 1 && page <= numPages) {
                                     goToPage(page);
                                 }
                             }}

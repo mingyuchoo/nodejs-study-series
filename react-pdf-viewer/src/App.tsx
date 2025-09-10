@@ -38,6 +38,12 @@ function App() {
     }
   }
 
+  const loadSamplePDF = () => {
+    // Using Mozilla's PDF.js sample PDF which doesn't have CORS restrictions
+    setSelectedFile('https://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf')
+    setTargetPage(1) // Reset to first page when loading new PDF
+  }
+
   return (
     <div className="app">
       <header>
@@ -54,6 +60,15 @@ function App() {
             accept=".pdf"
             onChange={handleFileChange}
           />
+          
+          <div className="sample-pdf-section">
+            <button 
+              onClick={loadSamplePDF}
+              className="sample-pdf-button"
+            >
+              샘플 PDF 로드 (TraceMonkey Paper)
+            </button>
+          </div>
           
           <div className="page-input-section">
             <label htmlFor="page-input">페이지:</label>
