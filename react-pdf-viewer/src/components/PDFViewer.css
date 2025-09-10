@@ -90,8 +90,9 @@
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 500;
-}.page
--navigation {
+}
+
+.page-navigation {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -117,4 +118,75 @@
   font-weight: 500;
   color: #333;
   white-space: nowrap;
+}
+
+/* 검색 하이라이트 스타일 */
+.pdf-page-container {
+  position: relative;
+  display: inline-block;
+}
+
+.highlight-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.highlight {
+  background-color: rgba(255, 255, 0, 0.3);
+  border-radius: 2px;
+  padding: 1px 2px;
+}
+
+.highlight-current {
+  background-color: rgba(255, 165, 0, 0.6);
+  border: 1px solid #ff8c00;
+  border-radius: 2px;
+  padding: 1px 2px;
+  box-shadow: 0 0 3px rgba(255, 140, 0, 0.8);
+}
+
+/* 검색 결과가 없을 때 */
+.no-results {
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  padding: 10px;
+}
+
+/* 검색 바 추가 스타일 */
+.search-bar {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 1rem;
+}
+
+/* PDF 컨테이너 개선 */
+.pdf-page-container {
+  position: relative;
+  display: inline-block;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 하이라이트 애니메이션 */
+.highlight-current {
+  animation: pulse 1s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    background-color: rgba(255, 165, 0, 0.6);
+    box-shadow: 0 0 3px rgba(255, 140, 0, 0.8);
+  }
+  to {
+    background-color: rgba(255, 165, 0, 0.8);
+    box-shadow: 0 0 6px rgba(255, 140, 0, 1);
+  }
 }

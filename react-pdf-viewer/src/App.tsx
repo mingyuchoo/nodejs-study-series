@@ -6,7 +6,11 @@ import './components/PDFViewer.css'
 function App() {
   const [selectedFile, setSelectedFile] = useState<File | string | null>(null)
   const [targetPage, setTargetPage] = useState<number>(1)
-  const pdfViewerRef = useRef<{ goToPage: (page: number) => void }>(null)
+  const pdfViewerRef = useRef<{ 
+    goToPage: (page: number) => void;
+    search: (searchTerm: string) => void;
+    clearSearch: () => void;
+  }>(null)
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0]
